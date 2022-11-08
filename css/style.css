@@ -167,6 +167,7 @@ form button:hover {
     margin: 30px auto 0;
     padding: 20px 0;
     border: solid 1px rgba(66, 0, 104, 0.1);
+    border-radius: 15px;
     background-color: rgba(0, 38, 255, 0.808);
     color: rgb(0, 0, 0);
 }
