@@ -171,7 +171,7 @@ function getTodos() {
             $('.'+selectors.numberParent).removeClass(selectors.disabled);
 
             $('.' + selectors.pauseHeader).text('Timer Paused');
-            $('.' + selectors.actionHeader).text('Start!');
+            $('.' + selectors.actionHeader).text('Start');
 
             $('body').addClass(selectors.bodyPause);
 
@@ -185,7 +185,7 @@ function getTodos() {
             $('.'+selectors.numberParent).addClass(selectors.disabled);
 
             $('.' + selectors.pauseHeader).text('');
-            $('.' + selectors.actionHeader).text('Pause!');
+            $('.' + selectors.actionHeader).text('Pause');
 
             $('body').removeClass(selectors.bodyPause);
 
