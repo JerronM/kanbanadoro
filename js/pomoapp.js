@@ -155,12 +155,13 @@ function getTodos() {
     var countdownTimer;
     var seconds = $('.' + selectors.lengthSession).text() * 60;
 
-    var soundBreak = new Audio('http://www.oringz.com/oringz-uploads/sounds-999-hold-your-horses.mp3');
-    var soundSession = new Audio('http://www.oringz.com/oringz-uploads/sounds-917-communication-channel.mp3');
-
+    var soundBreak = new Audio('click.wav');
+    var soundSession = new Audio('click.wav');
 
     $('.' + selectors.timer).click(function (event) {
         event.preventDefault();
+        // This plays sound on click, not the other functions.
+        soundBreak.play();
 
         var $this = $(this);
         if ($this.hasClass(selectors.running) && !$this.hasClass(selectors.pause)) {
@@ -310,6 +311,8 @@ function getTodos() {
         var remainingSeconds = seconds % 60;
         var remainingMinutes = minutes % 60;
 
+
+
         $('.' + selectors.minutesChart).data('easyPieChart').update(100 - (remainingMinutes * 100 / 60));
         $('.' + selectors.secondsChart).data('easyPieChart').update(100 - (remainingSeconds * 100 / 60));
 
@@ -327,10 +330,12 @@ function getTodos() {
     }
 
     function runTimer() {
+        var audio = new Audio('alarm.wav');
         countdownTimer = setInterval(function () {
             setTime();
 
             if (seconds == 0) {
+                audio.play();
                 done();
             } else {
                 seconds--;
